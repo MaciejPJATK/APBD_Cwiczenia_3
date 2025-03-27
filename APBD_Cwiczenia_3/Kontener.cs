@@ -15,8 +15,7 @@ class Kontener {
 
     public virtual void zaladuj(double waga) {
         if (waga > maxPojemnosc) {
-            Console.WriteLine("Za duży ładunek do kontenera " + nrSeryjny);
-            return;
+            throw new OverfillException("Za duży ładunek do kontenera " + nrSeryjny);
         }
         wagaLadunku = waga;
     }
